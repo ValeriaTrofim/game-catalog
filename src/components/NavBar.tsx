@@ -2,23 +2,12 @@ import Stack from "@mui/material/Stack";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import logo from "../assets/logo.webp";
+import SwitchMUI from "./SwitchMUI";
 import Typography from "@mui/material/Typography";
-
-// import { ThemeProvider, createTheme } from '@mui/material/styles';
-
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//     primary: {
-//       main: '#1976d2',
-//     },
-//   },
-// });
 
 const NavBar = () => {
   return (
     <Stack>
-      {/* <ThemeProvider theme={darkTheme}> */}
       <AppBar
         position="static"
         sx={{
@@ -36,8 +25,8 @@ const NavBar = () => {
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
           NavBar
         </Typography>
+        <SwitchMUI />
       </AppBar>
-      {/* </ThemeProvider> */}
     </Stack>
   );
 };

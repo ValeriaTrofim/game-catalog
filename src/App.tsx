@@ -1,11 +1,9 @@
 import "./App.css";
-// import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    // <Box sx={{ flexGrow: 1 }}>
     <Grid container>
       <Grid item xs={16}>
         <NavBar />
@@ -17,7 +15,6 @@ function App() {
         Main
       </Grid>
     </Grid>
-    // </Box>
   );
 }
 
