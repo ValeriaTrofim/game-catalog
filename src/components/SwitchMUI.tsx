@@ -1,7 +1,9 @@
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
+import { Box } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
+import { useThemeContext } from "./theme/ThemeContextProvider";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 52,
@@ -49,13 +51,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
 const SwitchMUI = () => {
+  const { mode, toggleColorMode } = useThemeContext();
+
   return (
-    <FormControlLabel
-      control={<MaterialUISwitch defaultChecked />}
-      label={<Typography fontSize={13}>Dark Mode</Typography>}
-      labelPlacement="bottom"
-    />
+    <Box>
+      <FormControlLabel
+        control={<MaterialUISwitch onChange={toggleColorMode} />}
+        label={<Typography fontSize={13}>{mode} mode</Typography>}
+        labelPlacement="bottom"
+      />
+    </Box>
   );
 };
 
