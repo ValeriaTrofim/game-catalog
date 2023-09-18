@@ -1,25 +1,8 @@
-import apiClient from "../services/api_client";
-import { useQuery } from "@tanstack/react-query";
 import Typography from "@mui/material/Typography";
-
-interface Game {
-  name: string;
-  id: number;
-}
-
-interface FetchGames {
-  count: number;
-  results: Game[];
-}
+import useGames from "../hooks/useGame";
 
 const GameGrid = () => {
-  const fetchGames = () =>
-    apiClient.get<FetchGames>("/games").then((res) => res.data);
-
-  const { data: games, error } = useQuery<FetchGames, Error>({
-    queryKey: ["games"],
-    queryFn: fetchGames,
-  });
+  const { games, error } = useGames();
 
   if (error) return <Typography>{error.message}</Typography>;
 
