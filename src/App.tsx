@@ -3,6 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { useThemeContext } from "./components/theme/ThemeContextProvider";
 import Grid from "@mui/material/Grid";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 import "./App.css";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           Aside
         </Grid>
         <Grid item xs={16} sm={6} md={6}>
-          Main
+          <GameGrid />
         </Grid>
       </Grid>
     </ThemeProvider>
