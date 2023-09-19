@@ -15,10 +15,10 @@ function App() {
         <Grid item xs={16}>
           <NavBar />
         </Grid>
-        <Grid item xs={6} sx={{ display: { xs: "none", sm: "block" } }}>
+        <Grid item xs={3} sx={{ display: { xs: "none", sm: "block" } }}>
           Aside
         </Grid>
-        <Grid item xs={16} sm={6} md={6}>
+        <Grid item padding={5} xs={16} sm={8} md={8}>
           <GameGrid />
         </Grid>
       </Grid>

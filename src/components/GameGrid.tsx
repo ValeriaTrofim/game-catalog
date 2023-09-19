@@ -1,5 +1,7 @@
 import Typography from "@mui/material/Typography";
 import useGames from "../hooks/useGame";
+import GameCard from "./GameCard";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const GameGrid = () => {
   const { games, error } = useGames();
@@ -7,11 +9,11 @@ const GameGrid = () => {
   if (error) return <Typography>{error.message}</Typography>;
 
   return (
-    <ul>
+    <Grid sx={{ columns: { xs: 1, sm: 2, md: 3 } }}>
       {games?.results.map((game) => (
-        <li key={game.id}>{game.name}</li>
+        <GameCard key={game.id} game={game} />
       ))}
-    </ul>
+    </Grid>
   );
 };
 

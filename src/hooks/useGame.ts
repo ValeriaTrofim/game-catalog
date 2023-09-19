@@ -1,9 +1,10 @@
 import apiClient from "../services/api_client";
 import { useQuery } from "@tanstack/react-query";
 
-interface Game {
+export interface Game {
   name: string;
   id: number;
+  background_image: string;
 }
 
 interface FetchGames {
