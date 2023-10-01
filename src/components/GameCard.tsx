@@ -4,6 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import PlatformIconList from "./PlatformIconList";
 
 interface Props {
   game: Game;
@@ -18,10 +19,14 @@ const GameCard = ({ game }: Props) => {
         title="game"
       />
       <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+        </Typography>
         <Typography variant="h5" component="div">
           {game.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary"></Typography>
       </CardContent>
       <CardActions></CardActions>
     </Card>
