@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { useThemeContext } from "./components/theme/ThemeContextProvider";
+import useThemeContext from "./components/theme/useThemeContext";
 import Grid from "@mui/material/Grid";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";

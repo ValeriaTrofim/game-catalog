@@ -1,5 +1,5 @@
 import { createTheme, Theme } from "@mui/material";
-import { createContext, FC, PropsWithChildren, useContext } from "react";
+import { createContext, FC, PropsWithChildren } from "react";
 import useColorTheme from "./use-color-theme";
 
 interface ThemeContext {
@@ -7,6 +7,7 @@ interface ThemeContext {
   toggleColorMode: () => void;
   theme: Theme;
 }
+
 export const ThemeContext = createContext<ThemeContext>({
   mode: "light",
   toggleColorMode: () => {},
@@ -18,8 +19,4 @@ export const ThemeContextProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
-};
-
-export const useThemeContext = () => {
-  return useContext(ThemeContext);
 };

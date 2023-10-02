@@ -1,7 +1,7 @@
 import MaterialUISwitch from "../assets/MaterialUISwitch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
-import { useThemeContext } from "./theme/ThemeContextProvider";
+import useThemeContext from "./theme/useThemeContext";
 
 const SwitchMUI = () => {
   const { mode, toggleColorMode } = useThemeContext();
