@@ -11,6 +11,7 @@ export interface Game {
   id: number;
   background_image: string;
   parent_platforms: { platform: Platform }[];
+  metacritic: number;
 }
 
 interface FetchGames {

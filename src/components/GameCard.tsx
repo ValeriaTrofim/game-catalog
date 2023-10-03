@@ -4,7 +4,9 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import { Stack } from "@mui/material";
 import PlatformIconList from "./PlatformIconList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   game: Game;
@@ -19,12 +21,19 @@ const GameCard = ({ game }: Props) => {
         title="game"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
-          />
-        </Typography>
-        <Typography variant="h5" component="div">
+        <Stack
+          direction="row"
+          alignContent="center"
+          justifyContent="space-between"
+        >
+          <Typography variant="body2" color="text.secondary">
+            <PlatformIconList
+              platforms={game.parent_platforms.map((p) => p.platform)}
+            />
+          </Typography>
+          <CriticScore score={game.metacritic} />
+        </Stack>
+        <Typography variant="h5" component="div" paddingTop={1}>
           {game.name}
         </Typography>
       </CardContent>
