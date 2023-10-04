@@ -23,12 +23,16 @@ const useGames = () => {
   const fetchGames = () =>
     apiClient.get<FetchGames>("/games").then((res) => res.data);
 
-  const { data: games, error } = useQuery<FetchGames, Error>({
+  const {
+    data: games,
+    error,
+    isLoading,
+  } = useQuery<FetchGames, Error>({
     queryKey: ["games"],
     queryFn: fetchGames,
   });
 
-  return { games, error };
+  return { games, error, isLoading };
 };
 
 export default useGames;

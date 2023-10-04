@@ -16,6 +16,7 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card sx={{ maxWidth: 345, mb: 3 }}>
       <CardMedia
+        component={"span"}
         sx={{ height: 140 }}
         image={game.background_image}
         title="game"
