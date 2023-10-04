@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 interface Genre {
   id: number;
   name: string;
+  image_background: string;
 }
 
 interface FetchGenres {
