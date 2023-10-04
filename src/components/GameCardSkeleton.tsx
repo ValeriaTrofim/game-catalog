@@ -10,8 +10,8 @@ const GameCardSkeleton = () => {
         <Skeleton variant="rectangular" width={345} height={140} />
       </CardMedia>
       <CardContent>
-        <Skeleton width="60%" />
         <Skeleton />
+        <Skeleton sx={{ padding: 1 }} />
       </CardContent>
     </Card>
   );

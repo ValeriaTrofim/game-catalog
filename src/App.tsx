@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import "./App.css";
+import GenreList from "./components/GenreList";
 
 function App() {
   const { theme } = useThemeContext();
@@ -16,7 +17,7 @@ function App() {
           <NavBar />
         </Grid>
         <Grid item xs={3} sx={{ display: { xs: "none", sm: "block" } }}>
-          Aside
+          <GenreList />
         </Grid>
         <Grid item padding={5} xs={16} sm={8} md={8}>
           <GameGrid />
