@@ -1,7 +1,7 @@
 import apiClient from "../services/api_client";
 import { useQuery } from "@tanstack/react-query";
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
   image_background: string;

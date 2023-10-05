@@ -6,6 +6,7 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
+  FaGamepad,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
@@ -28,6 +29,7 @@ const PlatformIconList = ({ platforms }: Props) => {
     nintendo: SiNintendo,
     web: BsGlobe,
     android: FaAndroid,
+    sega: FaGamepad,
   };
 
   return (

@@ -1,3 +1,4 @@
+import { GameQuery } from "../App";
 import apiClient from "../services/api_client";
 import { useQuery } from "@tanstack/react-query";
 
@@ -19,20 +20,29 @@ interface FetchGames {
   results: Game[];
 }
 
-const useGames = () => {
+const useGames = (gameQuery: GameQuery) => {
   const fetchGames = () =>
-    apiClient.get<FetchGames>("/games").then((res) => res.data);
+    apiClient
+      .get<FetchGames>("/games", {
+        ...(gameQuery.genre?.id && {
+          params: {
+            genres: gameQuery.genre?.id,
+          },
+        }),
+      })
+      .then((res) => res.data);
 
   const {
     data: games,
     error,
-    isLoading,
+    isFetching,
   } = useQuery<FetchGames, Error>({
-    queryKey: ["games"],
+    queryKey: ["games", `genre-${gameQuery.genre?.id ?? "no-genre"}`],
     queryFn: fetchGames,
+    keepPreviousData: false,
   });
 
-  return { games, error, isLoading };
+  return { games, error, isFetching };
 };
 
 export default useGames;

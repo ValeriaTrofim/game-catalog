@@ -27,7 +27,7 @@ const GameCard = ({ game }: Props) => {
           alignContent="center"
           justifyContent="space-between"
         >
-          <Typography variant="body2" color="text.secondary">
+          <Typography component={"div"} variant="body2" color="text.secondary">
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />

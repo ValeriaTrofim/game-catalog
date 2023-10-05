@@ -8,7 +8,7 @@ const CriticScore = ({ score }: Props) => {
   const color = score > 75 ? "#008312" : score > 60 ? "#fb8c00" : "";
 
   return (
-    <Typography variant="body2" color={color}>
+    <Typography component={"div"} variant="body2" color={color}>
       <Box
         sx={{
           paddingLeft: 1,

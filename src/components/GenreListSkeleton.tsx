@@ -12,7 +12,7 @@ const GenreListSkeleton = () => {
           <Skeleton animation="wave" variant="rounded" width={40} height={40} />
         </Avatar>
         <ListItemText sx={{ paddingLeft: 1 }}>
-          <Skeleton width="30%" />
+          <Skeleton width="40%" />
         </ListItemText>
       </ListItemButton>
     </ListItem>
