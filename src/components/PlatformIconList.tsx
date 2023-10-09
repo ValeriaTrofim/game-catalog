@@ -9,7 +9,7 @@ import {
   FaGamepad,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiNintendo, SiSega } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import Icon from "@mui/material/Icon";
 import { IconType } from "react-icons";
@@ -29,7 +29,8 @@ const PlatformIconList = ({ platforms }: Props) => {
     nintendo: SiNintendo,
     web: BsGlobe,
     android: FaAndroid,
-    sega: FaGamepad,
+    sega: SiSega,
+    "neo-geo": FaGamepad,
   };
 
   return (

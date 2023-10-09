@@ -1,9 +1,9 @@
 import Typography from "@mui/material/Typography";
 import useGames from "../hooks/useGame";
 import GameCard from "./GameCard";
-import Grid from "@mui/material/Unstable_Grid2";
 import { GameQuery } from "../App";
 import GameCardSkeleton from "./GameCardSkeleton";
+import Grid from "@mui/material/Grid";
 
 interface Props {
   gameQuery: GameQuery;

@@ -5,9 +5,9 @@ import Skeleton from "@mui/material/Skeleton";
 
 const GameCardSkeleton = () => {
   return (
-    <Card sx={{ maxWidth: 345, mb: 3 }}>
+    <Card sx={{ minWidth: 220, mb: 3 }}>
       <CardMedia>
-        <Skeleton variant="rectangular" width={345} height={140} />
+        <Skeleton variant="rectangular" height={200} />
       </CardMedia>
       <CardContent>
         <Skeleton />

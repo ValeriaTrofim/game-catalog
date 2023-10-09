@@ -14,10 +14,14 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card sx={{ maxWidth: 345, mb: 3 }}>
+    <Card sx={{ minWidth: 220, mb: 3 }}>
       <CardMedia
         component={"span"}
-        sx={{ height: 140 }}
+        sx={{
+          height: 200,
+          minWidth: 220,
+          backgroundPosition: "top",
+        }}
         image={game.background_image}
         title="game"
       />
@@ -34,7 +38,7 @@ const GameCard = ({ game }: Props) => {
           </Typography>
           <CriticScore score={game.metacritic} />
         </Stack>
-        <Typography variant="h5" component="div" paddingTop={1}>
+        <Typography variant="h5" component="div" pt={1}>
           {game.name}
         </Typography>
       </CardContent>
