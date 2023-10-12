@@ -38,7 +38,7 @@ const GameCard = ({ game }: Props) => {
           </Typography>
           <CriticScore score={game.metacritic} />
         </Stack>
-        <Typography variant="h5" component="div" pt={1}>
+        <Typography variant="h5" component="div" pt={1} fontWeight="bold">
           {game.name}
         </Typography>
       </CardContent>

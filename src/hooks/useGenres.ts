@@ -19,13 +19,13 @@ const useGenres = () => {
   const {
     data: genres,
     error,
-    isLoading,
+    isFetching,
   } = useQuery<FetchGenres, Error>({
     queryKey: ["genres"],
     queryFn: fetchGenres,
   });
 
-  return { genres, error, isLoading };
+  return { genres, error, isFetching };
 };
 
 export default useGenres;
