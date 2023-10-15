@@ -8,9 +8,10 @@ import {
   FaAndroid,
   FaGamepad,
 } from "react-icons/fa";
-import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo, SiSega } from "react-icons/si";
+import { MdPhoneIphone, MdComputer } from "react-icons/md";
+import { SiNintendo, SiSega, SiAtari } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
+import { GiRetroController } from "react-icons/gi";
 import Icon from "@mui/material/Icon";
 import { IconType } from "react-icons";
 
@@ -30,7 +31,10 @@ const PlatformIconList = ({ platforms }: Props) => {
     web: BsGlobe,
     android: FaAndroid,
     sega: SiSega,
+    atari: SiAtari,
+    "commodore-amiga": MdComputer,
     "neo-geo": FaGamepad,
+    "3do": GiRetroController,
   };
 
   return (

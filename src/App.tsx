@@ -9,9 +9,11 @@ import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
+import { Platform } from "./hooks/useGame";
 
 export interface GameQuery {
   genre: Genre | null;
+  platform: Platform | null;
 }
 
 function App() {
@@ -46,7 +48,12 @@ function App() {
           sm={16}
           md={9}
         >
-          <PlatformSelector />
+          <PlatformSelector
+            selectedPlatform={gameQuery.platform}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
           <GameGrid gameQuery={gameQuery} />
         </Grid>
       </Grid>

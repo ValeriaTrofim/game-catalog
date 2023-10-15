@@ -24,11 +24,14 @@ const useGames = (gameQuery: GameQuery) => {
   const fetchGames = () =>
     apiClient
       .get<FetchGames>("/games", {
-        ...(gameQuery.genre?.id && {
-          params: {
+        params: {
+          ...(gameQuery.genre?.id && {
             genres: gameQuery.genre?.id,
-          },
-        }),
+          }),
+          ...(gameQuery.platform?.id && {
+            parent_platforms: gameQuery.platform?.id,
+          }),
+        },
       })
       .then((res) => res.data);
 
@@ -37,7 +40,11 @@ const useGames = (gameQuery: GameQuery) => {
     error,
     isFetching,
   } = useQuery<FetchGames, Error>({
-    queryKey: ["games", `genre-${gameQuery.genre?.id ?? "no-genre"}`],
+    queryKey: [
+      "games",
+      `genre-${gameQuery.genre?.id ?? "no-genre"}`,
+      `platform-${gameQuery.platform?.id}`,
+    ],
     queryFn: fetchGames,
     keepPreviousData: false,
   });

@@ -1,11 +1,6 @@
 import apiClient from "../services/api_client";
 import { useQuery } from "@tanstack/react-query";
-
-interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from "./useGame";
 
 interface FetchPlatforms {
   count: number;
