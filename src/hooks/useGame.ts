@@ -13,6 +13,7 @@ export interface Game {
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  ordering: string;
 }
 
 interface FetchGames {
@@ -31,6 +32,7 @@ const useGames = (gameQuery: GameQuery) => {
           ...(gameQuery.platform?.id && {
             parent_platforms: gameQuery.platform?.id,
           }),
+          ...(gameQuery.sortOrder && { ordering: gameQuery.sortOrder }),
         },
       })
       .then((res) => res.data);
@@ -44,6 +46,7 @@ const useGames = (gameQuery: GameQuery) => {
       "games",
       `genre-${gameQuery.genre?.id ?? "no-genre"}`,
       `platform-${gameQuery.platform?.id}`,
+      `ordering-${gameQuery.sortOrder}`,
     ],
     queryFn: fetchGames,
     keepPreviousData: false,

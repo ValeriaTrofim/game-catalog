@@ -12,8 +12,8 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 
   if (error) return null;
   return (
-    <Box sx={{ pb: 1 }}>
-      <FormControl sx={{ width: 220 }}>
+    <Box>
+      <FormControl id="form-control" sx={{ width: 220 }}>
         <InputLabel id="demo-simple-select-label">Platforms</InputLabel>
         <Select
           labelId="demo-simple-select-label"
