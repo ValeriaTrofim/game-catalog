@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import logo from "../assets/logo.webp";
 import SwitchMUI from "./SwitchMUI";
 import Typography from "@mui/material/Typography";
+import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   return (
@@ -23,8 +24,9 @@ const NavBar = () => {
           <img src={logo} width={60} height={60} />
         </IconButton>
         <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-          NavBar
+          <SearchInput />
         </Typography>
+
         <SwitchMUI />
       </AppBar>
     </Stack>

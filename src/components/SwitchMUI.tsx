@@ -9,7 +9,7 @@ const SwitchMUI = () => {
   return (
     <FormControlLabel
       control={<MaterialUISwitch onChange={toggleColorMode} />}
-      label={<Typography fontSize={13}>{mode} mode</Typography>}
+      label={<Typography fontSize={10}>{mode} mode</Typography>}
       labelPlacement="bottom"
     />
   );
