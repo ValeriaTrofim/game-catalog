@@ -9,6 +9,7 @@ import { Platform } from "./hooks/useGame";
 import SortSelector from "./components/SortSelector";
 import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
 import "./App.css";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -53,6 +54,7 @@ function App() {
           sm={16}
           md={9}
         >
+          <GameHeading gameQuery={gameQuery} />
           <Grid
             sx={{ flexGrow: 1, alignItems: "center", pb: 2 }}
             container

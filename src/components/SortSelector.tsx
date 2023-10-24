@@ -24,11 +24,11 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   };
   const sortOrders = [
     { value: "", label: "Relevance" },
-    { value: "added", label: "Date added" },
     { value: "-name", label: "Name" },
     { value: "-released", label: "Release date" },
     { value: "-metacritic", label: "Popularity" },
     { value: "-rating", label: "Average rating" },
+    { value: "added", label: "Date added" },
   ];
 
   const currentSortOrder = sortOrders.find(
@@ -38,7 +38,11 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   return (
     <Card variant="outlined" sx={{ width: 220, pb: 0 }}>
       <List component="nav" sx={{ p: 0 }}>
-        <ListItemButton id="lock-button" onClick={handleClickListItem}>
+        <ListItemButton
+          id="lock-button"
+          sx={{ pt: 0, pb: 0 }}
+          onClick={handleClickListItem}
+        >
           <ListItemText
             primary="Order by:"
             secondary={currentSortOrder?.label || "Relevance"}
