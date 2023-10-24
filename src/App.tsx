@@ -1,21 +1,20 @@
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import useThemeContext from "./components/theme/useThemeContext";
-import Grid from "@mui/material/Grid";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
-import "./App.css";
 import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGame";
 import SortSelector from "./components/SortSelector";
+import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
+import "./App.css";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -27,7 +26,11 @@ function App() {
       <CssBaseline />
       <Grid container>
         <Grid item xs={16} sx={{ pb: 5 }}>
-          <NavBar />
+          <NavBar
+            onSearch={(searchText) =>
+              setGameQuery({ ...gameQuery, searchText })
+            }
+          />
         </Grid>
         <Grid
           item

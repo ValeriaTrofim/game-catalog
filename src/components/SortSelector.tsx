@@ -14,13 +14,13 @@ interface Props {
 }
 
 const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [selector, setSelector] = useState<null | HTMLElement>(null);
+  const open = Boolean(selector);
   const handleClickListItem = (e: MouseEvent<HTMLElement>) => {
-    setAnchorEl(e.currentTarget);
+    setSelector(e.currentTarget);
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setSelector(null);
   };
   const sortOrders = [
     { value: "", label: "Relevance" },
@@ -47,7 +47,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
       </List>
       <Menu
         id="lock-menu"
-        anchorEl={anchorEl}
+        anchorEl={selector}
         open={open}
         onClose={handleClose}
       >

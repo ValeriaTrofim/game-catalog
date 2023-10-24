@@ -4,15 +4,31 @@ import {
   SearchIconWrapper,
   StyledInputBase,
 } from "../assets/StyledSearchInput";
+import { useRef } from "react";
 
-const SearchInput = () => {
+export interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const SearchInput = ({ onSearch }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
-    <Search>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase placeholder="Search…" />
-    </Search>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (ref.current) {
+          onSearch(ref.current.value);
+        }
+      }}
+    >
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase inputRef={ref} placeholder="Search…" />
+      </Search>
+    </form>
   );
 };
 

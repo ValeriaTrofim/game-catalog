@@ -33,6 +33,8 @@ const useGames = (gameQuery: GameQuery) => {
             parent_platforms: gameQuery.platform?.id,
           }),
           ...(gameQuery.sortOrder && { ordering: gameQuery.sortOrder }),
+
+          ...(gameQuery.searchText && { search: gameQuery.searchText }),
         },
       })
       .then((res) => res.data);
@@ -47,6 +49,7 @@ const useGames = (gameQuery: GameQuery) => {
       `genre-${gameQuery.genre?.id ?? "no-genre"}`,
       `platform-${gameQuery.platform?.id}`,
       `ordering-${gameQuery.sortOrder}`,
+      `search-${gameQuery.searchText}`,
     ],
     queryFn: fetchGames,
     keepPreviousData: false,
