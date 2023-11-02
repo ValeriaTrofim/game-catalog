@@ -23,10 +23,12 @@ const NavBar = ({ onSearch }: Props) => {
         >
           <img src={logo} width={60} height={60} />
         </IconButton>
-
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <SearchInput onSearch={onSearch} />
-        </Typography>
+        <SearchInput onSearch={onSearch} />
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }}
+        ></Typography>
 
         <SwitchMUI />
       </AppBar>

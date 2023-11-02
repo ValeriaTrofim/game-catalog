@@ -39,7 +39,7 @@ const PlatformIconList = ({ platforms }: Props) => {
 
   return (
     <>
-      {platforms.map((platform) => {
+      {platforms?.map((platform) => {
         const PlatformIcon = iconMap[platform.slug];
         return (
           <Icon sx={{ fontSize: 15, paddingRight: 3 }} key={platform.slug}>
