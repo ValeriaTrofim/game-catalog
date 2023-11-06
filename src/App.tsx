@@ -56,11 +56,7 @@ function App() {
           md={9}
         >
           <GameHeading gameQuery={gameQuery} />
-          <Grid
-            sx={{ flexGrow: 1, alignItems: "center", pb: 2 }}
-            container
-            spacing={2}
-          >
+          <Grid sx={{ alignItems: "center", pb: 2 }} container spacing={2}>
             <Grid item sx={{ p: 0 }}>
               <SortSelector
                 sortOrder={gameQuery.sortOrder}

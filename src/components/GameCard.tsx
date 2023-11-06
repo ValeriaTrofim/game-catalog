@@ -1,10 +1,13 @@
 import { Game } from "../hooks/useGame";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Typography from "@mui/material/Typography";
-import { Grid, Stack } from "@mui/material";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 

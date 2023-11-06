@@ -1,12 +1,11 @@
-import Typography from "@mui/material/Typography";
 import useGames from "../hooks/useGame";
 import GameCard from "./GameCard";
 import { GameQuery } from "../App";
 import GameCardSkeleton from "./GameCardSkeleton";
-import Grid from "@mui/material/Grid";
 import LoadingButton from "@mui/lab/LoadingButton";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Grid, Typography } from "@mui/material";
 
 interface Props {
   gameQuery: GameQuery;
@@ -25,7 +24,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   return (
     <InfiniteScroll
       dataLength={fetchedGamesCount}
-      style={{ overflow: "hidden", justifyContent: "center" }}
+      style={{ overflow: "hidden" }}
       hasMore={!!hasNextPage}
       next={() => fetchNextPage()}
       loader={
@@ -33,7 +32,7 @@ const GameGrid = ({ gameQuery }: Props) => {
           loading
           variant="contained"
           disabled
-          sx={{ width: 120, height: 40 }}
+          sx={{ width: 120, height: 40, mr: "50%" }}
         />
       }
     >
