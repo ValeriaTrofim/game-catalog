@@ -1,15 +1,13 @@
-import useThemeContext from "./components/theme/useThemeContext";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GenreList from "./components/GenreList";
-import { Genre } from "./hooks/useGenres";
 import { useState } from "react";
-import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/useGame";
-import SortSelector from "./components/SortSelector";
+import useThemeContext from "../components/theme/useThemeContext";
 import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
-import "./App.css";
-import GameHeading from "./components/GameHeading";
+import GenreList from "../components/GenreList";
+import GameHeading from "../components/GameHeading";
+import SortSelector from "../components/SortSelector";
+import PlatformSelector from "../components/PlatformSelector";
+import GameGrid from "../components/GameGrid";
+import { Genre } from "../hooks/useGenres";
+import { Platform } from "../hooks/useGame";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -19,21 +17,13 @@ export interface GameQuery {
   searchText: string;
 }
 
-function App() {
+const HomePage = () => {
   const { theme } = useThemeContext();
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Grid container>
-        <Grid item xs={16} sx={{ pb: 5 }}>
-          <NavBar
-            onSearch={(searchText) =>
-              setGameQuery({ ...gameQuery, searchText })
-            }
-          />
-        </Grid>
         <Grid
           item
           xs={2.5}
@@ -79,6 +69,6 @@ function App() {
       </Grid>
     </ThemeProvider>
   );
-}
+};
 
-export default App;
+export default HomePage;
