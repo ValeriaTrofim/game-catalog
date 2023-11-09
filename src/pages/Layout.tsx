@@ -9,19 +9,15 @@ const Layout = () => {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   const { theme } = useThemeContext();
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Grid item xs={16} sx={{ pb: 5 }}>
-          <NavBar
-            onSearch={(searchText) =>
-              setGameQuery({ ...gameQuery, searchText })
-            }
-          />
-        </Grid>
-        <Outlet />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Grid item xs={16} sx={{ pb: 5 }}>
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
+      </Grid>
+      <Outlet />
+    </ThemeProvider>
   );
 };
 
