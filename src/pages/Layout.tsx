@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { GameQuery } from "./HomePage";
-import { CssBaseline, Grid, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, Grid, ThemeProvider } from "@mui/material";
 import useThemeContext from "../components/theme/useThemeContext";
 
 const Layout = () => {
@@ -16,7 +16,9 @@ const Layout = () => {
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
       </Grid>
-      <Outlet />
+      <Box p={3}>
+        <Outlet />
+      </Box>
     </ThemeProvider>
   );
 };

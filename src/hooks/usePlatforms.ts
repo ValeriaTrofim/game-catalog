@@ -1,25 +1,17 @@
-import apiClient from "../services/api_client";
+import APIClient, { FetchResponse } from "../services/api_client";
 import { useQuery } from "@tanstack/react-query";
 import { Platform } from "./useGame";
 
-interface FetchPlatforms {
-  count: number;
-  results: Platform[];
-}
+const apiClient = new APIClient<Platform>("/platforms/lists/parents");
 
 const usePlatforms = () => {
-  const fetchPlatforms = () =>
-    apiClient
-      .get<FetchPlatforms>("/platforms/lists/parents")
-      .then((res) => res.data);
-
   const {
     data: platforms,
     error,
     isFetching,
-  } = useQuery<FetchPlatforms, Error>({
+  } = useQuery<FetchResponse<Platform>, Error>({
     queryKey: ["platforms"],
-    queryFn: fetchPlatforms,
+    queryFn: apiClient.getAll,
   });
 
   return { platforms, error, isFetching };
