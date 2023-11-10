@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
 import { CircularProgress, Typography } from "@mui/material";
+import ExpandableText from "../components/ExpandableText";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -11,7 +12,7 @@ const GameDetailPage = () => {
   return (
     <>
       <Typography variant="h4">{game?.name}</Typography>
-      <Typography variant="subtitle1">{game?.description_raw}</Typography>
+      <ExpandableText>{game?.description_raw || ""}</ExpandableText>
     </>
   );
 };
