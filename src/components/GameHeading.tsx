@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { GameQuery } from "../App";
+import { GameQuery } from "../pages/HomePage";
 
 interface Props {
   gameQuery: GameQuery;

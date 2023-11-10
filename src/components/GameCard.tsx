@@ -1,4 +1,4 @@
-import { Game } from "../hooks/useGame";
+import { Game } from "../entities/Game";
 import {
   Card,
   CardActionArea,

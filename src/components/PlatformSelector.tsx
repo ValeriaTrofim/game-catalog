@@ -1,6 +1,6 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import usePlatforms from "../hooks/usePlatforms";
-import { Platform } from "../hooks/useGame";
+import { Platform } from "../entities/Platform";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;

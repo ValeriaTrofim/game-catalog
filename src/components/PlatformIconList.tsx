@@ -1,4 +1,4 @@
-import { Platform } from "../hooks/useGame";
+import { Platform } from "../entities/Platform";
 import {
   FaWindows,
   FaXbox,
