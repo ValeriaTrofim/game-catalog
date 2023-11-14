@@ -16,7 +16,7 @@ const Layout = () => {
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         />
       </Grid>
-      <Box p={3}>
+      <Box>
         <Outlet />
       </Box>
     </ThemeProvider>

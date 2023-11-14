@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../hooks/useGameDetails";
-import { CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import ExpandableText from "../components/ExpandableText";
+import GameAtributes from "../components/GameAtributes";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -9,11 +10,16 @@ const GameDetailPage = () => {
 
   if (isLoading) return <CircularProgress />;
   if (error) throw error;
+  if (!game) {
+    return <Typography>Error: Game not found</Typography>;
+  }
+
   return (
-    <>
+    <Box p={5}>
       <Typography variant="h4">{game?.name}</Typography>
       <ExpandableText>{game?.description_raw || ""}</ExpandableText>
-    </>
+      <GameAtributes game={game} />
+    </Box>
   );
 };
 

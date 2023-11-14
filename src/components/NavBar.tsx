@@ -5,6 +5,7 @@ import logo from "../assets/logo.webp";
 import SwitchMUI from "./SwitchMUI";
 import Typography from "@mui/material/Typography";
 import SearchInput, { Props } from "./SearchInput";
+import { Link } from "@mui/material";
 
 const NavBar = ({ onSearch }: Props) => {
   return (
@@ -16,13 +17,15 @@ const NavBar = ({ onSearch }: Props) => {
           alignItems: "center",
         }}
       >
-        <IconButton
-          color="inherit"
-          aria-label="menu"
-          sx={{ width: 60, height: 60 }}
-        >
-          <img src={logo} width={60} height={60} />
-        </IconButton>
+        <Link href={"/"}>
+          <IconButton
+            color="inherit"
+            aria-label="menu"
+            sx={{ width: 60, height: 60 }}
+          >
+            <img src={logo} width={60} height={60} />
+          </IconButton>
+        </Link>
         <SearchInput onSearch={onSearch} />
         <Typography
           variant="h6"

@@ -15,6 +15,7 @@ const CriticScore = ({ score }: Props) => {
           paddingRight: 1,
           border: `1px solid ${color}`,
           borderRadius: 1,
+          width: 35,
         }}
       >
         {score}

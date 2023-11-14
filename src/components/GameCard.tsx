@@ -28,16 +28,18 @@ const GameCard = ({ game }: Props) => {
         }}
       >
         <CardActionArea>
-          <CardMedia
-            component={"span"}
-            sx={{
-              height: 200,
-              minWidth: 220,
-              backgroundPosition: "top",
-            }}
-            image={game.background_image}
-            title="game"
-          />
+          <Link href={"/games/" + game.slug}>
+            <CardMedia
+              component={"span"}
+              sx={{
+                height: 200,
+                minWidth: 220,
+                backgroundPosition: "top",
+              }}
+              image={game.background_image}
+              title="game"
+            />
+          </Link>
           <CardContent>
             <Stack
               direction="row"
