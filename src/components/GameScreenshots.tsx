@@ -1,5 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import useScreenshots from "../hooks/useScreenshots";
+import GameScreenshotsSkeleton from "./GameScreenshotsSkeleton";
 
 interface Props {
   gameId: number;
@@ -8,11 +9,16 @@ interface Props {
 const GameScreenshots = ({ gameId }: Props) => {
   const { data, isFetching, error } = useScreenshots(gameId);
 
-  if (isFetching) return null;
+  const skeletons = [...Array(6).keys()];
+
   if (error) throw error;
   return (
     <Box>
-      <Grid container>
+      <Grid container columnSpacing={1} rowSpacing={1}>
+        {isFetching &&
+          skeletons.map((skeleton) => (
+            <GameScreenshotsSkeleton key={skeleton} />
+          ))}
         {data?.results.map((file) => (
           <Grid
             item
@@ -21,7 +27,7 @@ const GameScreenshots = ({ gameId }: Props) => {
               flexDirection: "column",
             }}
             xs={12}
-            sm={6}
+            sm={12}
             md={6}
             key={file.id}
           >
