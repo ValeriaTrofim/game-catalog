@@ -4,8 +4,12 @@ import IconButton from "@mui/material/IconButton";
 import logo from "../assets/logo.webp";
 import SwitchMUI from "./SwitchMUI";
 import Typography from "@mui/material/Typography";
-import SearchInput, { Props } from "./SearchInput";
 import { Link } from "@mui/material";
+import SearchInput from "./SearchInput";
+
+export interface Props {
+  onSearch: (searchText: string) => void;
+}
 
 const NavBar = ({ onSearch }: Props) => {
   return (

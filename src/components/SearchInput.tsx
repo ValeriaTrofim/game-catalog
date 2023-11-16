@@ -5,13 +5,16 @@ import {
   StyledInputBase,
 } from "../assets/StyledSearchInput";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-export interface Props {
+interface Props {
   onSearch: (searchText: string) => void;
 }
 
 const SearchInput = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
+
+  const navigate = useNavigate();
 
   return (
     <form
@@ -19,6 +22,8 @@ const SearchInput = ({ onSearch }: Props) => {
         e.preventDefault();
         if (ref.current) {
           onSearch(ref.current.value);
+
+          navigate("/");
         }
       }}
     >
