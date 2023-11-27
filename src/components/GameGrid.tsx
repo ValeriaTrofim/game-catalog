@@ -5,7 +5,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Box, Grid, Typography } from "@mui/material";
-import { GameQuery } from "../pages/HomePage";
+import { GameQuery } from "../entities/GameQuery";
 
 interface Props {
   gameQuery: GameQuery;
