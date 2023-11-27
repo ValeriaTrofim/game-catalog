@@ -13,7 +13,6 @@ interface Props {
 
 const SearchInput = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
-
   const navigate = useNavigate();
 
   return (
@@ -22,7 +21,6 @@ const SearchInput = ({ onSearch }: Props) => {
         e.preventDefault();
         if (ref.current) {
           onSearch(ref.current.value);
-
           navigate("/");
         }
       }}
