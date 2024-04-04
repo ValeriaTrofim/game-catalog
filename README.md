@@ -44,17 +44,25 @@ This game catalog serves as a centralized and organized collection of informatio
 
 #### Prerequisites
 
-- make sure to install yarn
+- install yarn
 - node v18.8.0
 
 #### Installation
 
-1. The API Key is included in the project
-2. Clone the repo
+1. Get the API Key from https://rawg.io/apidocs
+
+2. Create a .env file and add the API Key
+
+```sh
+  VITE_RAWG_BASE_URL="https://api.rawg.io/api"
+  VITE_RAWG_API_KEY=""
+```
+
+3. Clone the repo
    ```sh
    git clone git@github.com:ValeriaTrofim/game-catalog.git
    ```
-3. Install yarn packages
+4. Install yarn packages
    ```sh
    yarn
    ```
