@@ -49,22 +49,21 @@ This game catalog serves as a centralized and organized collection of informatio
 
 #### Installation
 
-1. Get the API Key from https://rawg.io/apidocs
+1. Clone the repo
+   ```sh
+   git clone git@github.com:ValeriaTrofim/game-catalog.git
+   ```
+2. Install yarn packages
+   ```sh
+   yarn
+   ```
+3. Get the API Key from https://rawg.io/apidocs
 
-2. Create a .env file and add the API Key
+4. Create a .env file and add the API Key
 
    ```sh
    VITE_RAWG_BASE_URL="https://api.rawg.io/api"
    VITE_RAWG_API_KEY=""
-   ```
-
-3. Clone the repo
-   ```sh
-   git clone git@github.com:ValeriaTrofim/game-catalog.git
-   ```
-4. Install yarn packages
-   ```sh
-   yarn
    ```
 
 ### Usage
