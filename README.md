@@ -53,10 +53,10 @@ This game catalog serves as a centralized and organized collection of informatio
 
 2. Create a .env file and add the API Key
 
-```sh
-  VITE_RAWG_BASE_URL="https://api.rawg.io/api"
-  VITE_RAWG_API_KEY=""
-```
+   ```sh
+   VITE_RAWG_BASE_URL="https://api.rawg.io/api"
+   VITE_RAWG_API_KEY=""
+   ```
 
 3. Clone the repo
    ```sh
