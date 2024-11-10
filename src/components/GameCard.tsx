@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Game;
@@ -36,7 +37,7 @@ const GameCard = ({ game }: Props) => {
                 minWidth: 220,
                 backgroundPosition: "top",
               }}
-              image={game.background_image}
+              image={getCroppedImageUrl(game.background_image)}
               title="game"
             />
           </Link>
