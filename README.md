@@ -81,4 +81,4 @@ This game catalog serves as a centralized and organized collection of informatio
 
 Valeria Trofim - valeria.trofim17@gmail.com
 
-Project Link: [https://github.com/ValeriaTrofim/game-catalog](https://github.com/ValeriaTrofim/game-catalog)
+Project Link: [https://game-catalog-sooty.vercel.app](https://game-catalog-sooty.vercel.app)
